@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 
 const Button = ({ title, id, rightIcon, leftIcon, containerClass }) => {
   return (
@@ -8,15 +9,20 @@ const Button = ({ title, id, rightIcon, leftIcon, containerClass }) => {
       {leftIcon}
 
       <span className="relative incline-flex overflow-hidden font-general text-xs uppercase">
-        <div>
-          {title}
-        </div>
+        <div>{title}</div>
       </span>
 
       {rightIcon}
-
     </button>
-  )
-}
+  );
+};
 
-export default Button
+Button.propTypes = {
+  title: PropTypes.string,
+  id: PropTypes.string,
+  rightIcon: PropTypes.element,
+  leftIcon: PropTypes.element,
+  containerClass: PropTypes.string,
+};
+
+export default Button;
